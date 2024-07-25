@@ -1,33 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.dark {
+  --color-primary: rgb(27, 27, 27);
+  --color-secondary: rgb(31 41 55);
+  --color-primary-text: rgb(226, 226, 226);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.light {
+  --color-primary: rgb(255, 255, 255);
+  --color-secondary: rgb(229, 229, 229);
+  --color-primary-text: rgb(16, 16, 16);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply h-[calc(100dvh)] overflow-y-auto;
+}
+.link-border {
+  @apply border-transparent border-white relative before:content-[''] before:absolute before:w-0 before:h-[2px] before:bottom-0 before:left-0  before:transition-all before:duration-300 hover:before:w-full;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes onLoad {
+  from {
+    opacity: 0;
+    scale: 0.999;
   }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+/* * {
+  animation: onLoad linear 0.5s forwards;
+  opacity: 0;
+} */
+* {
+  animation: onLoad linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 5%;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("/fonts/SF-Pro-Display-HeavyItalic.otf") format("opentype");
 }
