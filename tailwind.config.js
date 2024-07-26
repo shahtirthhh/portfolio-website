@@ -15,9 +15,10 @@ module.exports = {
       },
       fontFamily: {
         primary: ["Radio Canada", "sans-serif"],
+        secondary: ["Edu AU VIC WA NT Hand", "cursive"],
         SFPro: ["SFPro", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };

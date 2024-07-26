@@ -16,28 +16,38 @@ const Navigation = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <nav className="flex flex-col py-7 items-center px-3 justify-between h-full">
+      <nav className="sticky top-7 flex flex-col py-7 items-center px-3 justify-between h-full">
         <div className="flex flex-col items-center  gap-4 w-full">
-          <NavItem icon="🏠" label="Home" isHovered={isHovered} to="#hero" />
           <NavItem
+            setHovered={setIsHovered}
+            icon="🏠"
+            label="Home"
+            isHovered={isHovered}
+            to="#hero"
+          />
+          <NavItem
+            setHovered={setIsHovered}
             icon="💼"
             label="Experience"
             isHovered={isHovered}
             to="#experience"
           />
           <NavItem
+            setHovered={setIsHovered}
             icon="💻"
             label="Projects"
             isHovered={isHovered}
             to="#projects"
           />
           <NavItem
+            setHovered={setIsHovered}
             icon="📄"
             label="Research Papers"
             isHovered={isHovered}
             to="#papers"
           />
           <NavItem
+            setHovered={setIsHovered}
             icon="🎓"
             label="Certificates"
             isHovered={isHovered}
@@ -45,8 +55,15 @@ const Navigation = () => {
           />
         </div>
         <div className="flex flex-col items-center gap-4">
-          <NavItem icon="📋" label="Resume" isHovered={isHovered} to="resume" />
           <NavItem
+            setHovered={setIsHovered}
+            icon="📋"
+            label="Resume"
+            isHovered={isHovered}
+            to="resume"
+          />
+          <NavItem
+            setHovered={setIsHovered}
             icon="💬 "
             label="Contact"
             isHovered={isHovered}
@@ -59,11 +76,12 @@ const Navigation = () => {
   );
 };
 
-const NavItem = ({ icon, label, isHovered, to }) => (
+const NavItem = ({ icon, label, isHovered, to, setHovered }) => (
   <div className={"flex items-center w-full gap-2"}>
     <div className="sm:text-2xl text-lg">{icon}</div>
     {isHovered && (
       <Link
+        onClick={() => setHovered(false)}
         href={to}
         className=" text-base font-medium whitespace-nowrap  font-primary"
       >

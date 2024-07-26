@@ -6,15 +6,28 @@ import github from "../../../public/assets/github.png";
 import leetcode from "../../../public/assets/leetcode.png";
 import x from "../../../public/assets/x.png";
 
+import react from "../.././../public/assets/react.png";
+import nodejs from "../.././../public/assets/nodejs.png";
+import sql from "../.././../public/assets/sql.png";
+import mongodb from "../.././../public/assets/mongodb.png";
+import graphql from "../.././../public/assets/graphql.png";
+import nextjs from "../.././../public/assets/nextjs.png";
+import reactNative from "../.././../public/assets/react_native.png";
+import tailwindcss from "../.././../public/assets/tailwindcss.png";
+import typescript from "../.././../public/assets/typescript.png";
+
 const HeroSection = () => {
   return (
-    <div className="p-7 flex flex-col items-center gap-8" id="hero">
-      <div className="flex sm:flex-row flex-col  justify-center items-center gap-8">
+    <div
+      className="p-7 min-h-[100vh] flex flex-col justify-between gap-8"
+      id="hero"
+    >
+      <div className="flex sm:flex-row flex-col  justify-center items-center sm:gap-20 gap-8">
         <div className="relative sm:w-56 sm:h-56 w-44 h-44 shadow-lg rounded-full">
-          <Image src={profile} priority fill />
+          <Image src={profile} priority fill className="rounded-full" />
         </div>
         <div className="flex flex-col">
-          <p className="sm:text-5xl text-2xl sm:text-left text-center whitespace-pre-line text-primaryText  font-SFPro">
+          <p className="md:text-3xl lg:text-5xl text-2xl sm:text-left text-center whitespace-pre-line text-primaryText  font-SFPro">
             {"⚡ Full stack developer, \npart time data engineer"}
           </p>
         </div>
@@ -60,6 +73,41 @@ const HeroSection = () => {
         >
           <Image src={x} className="w-10 sm:w-12 sm:h-12 h-10" priority />
         </a>
+      </div>
+      <div>
+        <p className="font-primary italic font-normal sm:text-lg text-xs text-center">
+          " A computer engineering graduate with passion towards building
+          intutive solutions and embarking his journey of Data engineer "
+        </p>
+      </div>
+      <div className="infinite_slideshow mt-10">
+        <div className=" infinite_slideshow_item slideshow_item1">
+          <Image src={react} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item2">
+          <Image src={nodejs} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item3">
+          <Image src={nextjs} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item4">
+          <Image src={sql} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item5">
+          <Image src={typescript} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item6">
+          <Image src={mongodb} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item7 ">
+          <Image src={reactNative} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item8">
+          <Image src={graphql} fill />
+        </div>
+        <div className=" infinite_slideshow_item slideshow_item9">
+          <Image src={tailwindcss} fill />
+        </div>
       </div>
     </div>
   );

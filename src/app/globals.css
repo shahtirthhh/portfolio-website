@@ -1,23 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Inter:wght@100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .dark {
   --color-primary: rgb(27, 27, 27);
-  --color-secondary: rgb(31 41 55);
+  --color-secondary: #1f2937;
   --color-primary-text: rgb(226, 226, 226);
 }
 .light {
   --color-primary: rgb(255, 255, 255);
   --color-secondary: rgb(229, 229, 229);
-  --color-primary-text: rgb(16, 16, 16);
+  --color-primary-text: rgb(53, 53, 53);
 }
 
-body {
-  @apply h-[calc(100dvh)] overflow-y-auto;
+html {
+  scroll-behavior: smooth;
 }
+
 .link-border {
   @apply border-transparent border-white relative before:content-[''] before:absolute before:w-0 before:h-[2px] before:bottom-0 before:left-0  before:transition-all before:duration-300 hover:before:w-full;
 }
@@ -25,7 +28,7 @@ body {
 @keyframes onLoad {
   from {
     opacity: 0;
-    scale: 0.999;
+    scale: 0.8;
   }
   to {
     opacity: 1;
@@ -36,10 +39,94 @@ body {
   animation: onLoad linear 0.5s forwards;
   opacity: 0;
 } */
-* {
+
+.custom_scroll {
+  @apply scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400;
+}
+/* * {
   animation: onLoad linear;
   animation-timeline: view();
   animation-range: entry 0% cover 5%;
+} */
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+.infinite_slideshow {
+  position: relative;
+  width: 90%;
+  height: 100px;
+  max-width: 1536px;
+  margin-inline: auto;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.infinite_slideshow_item {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: max(calc(5rem * 9), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.slideshow_item1 {
+  animation-delay: calc(30s / 9 * (9 - 1) * -1);
+}
+.slideshow_item2 {
+  animation-delay: calc(30s / 9 * (9 - 2) * -1);
+}
+.slideshow_item3 {
+  animation-delay: calc(30s / 9 * (9 - 3) * -1);
+}
+.slideshow_item4 {
+  animation-delay: calc(30s / 9 * (9 - 4) * -1);
+}
+.slideshow_item5 {
+  animation-delay: calc(30s / 9 * (9 - 5) * -1);
+}
+.slideshow_item6 {
+  animation-delay: calc(30s / 9 * (9 - 6) * -1);
+}
+.slideshow_item7 {
+  animation-delay: calc(30s / 9 * (9 - 7) * -1);
+}
+.slideshow_item8 {
+  animation-delay: calc(30s / 9 * (9 - 8) * -1);
+}
+.slideshow_item9 {
+  animation-delay: calc(30s / 9 * (9 - 9) * -1);
+}
+
+.know-more {
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.know-more > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.know-more:hover svg {
+  transform: translateX(5px);
+}
+
+.know-more:active {
+  transform: scale(0.95);
 }
 
 @font-face {
