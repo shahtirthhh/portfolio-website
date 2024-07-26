@@ -1,9 +1,10 @@
 import projects from "@/data/projects";
+import Image from "next/image";
 import Link from "next/link";
 
 const ProjectsSection = () => {
   return (
-    <div id="experience" className="p-4 flex flex-col gap-10">
+    <div id="projects" className="p-4 flex flex-col gap-10">
       <div className="flex flex-row items-center gap-5">
         <p className="w-full h-[0.5px] bg-slate-200"></p>
         <h1 className="font-primary whitespace-nowrap italic font-normal lg:text-lg md:text-base text-sm  text-primaryText">
@@ -47,6 +48,7 @@ const ProjectsSection = () => {
               controls
               className="rounded-md shadow-md sm:w-96 "
             ></video>
+
             <Link
               href={""}
               className="know-more sm:hidden flex font-primary sm:text-xs text-sm underline underline-offset-2"

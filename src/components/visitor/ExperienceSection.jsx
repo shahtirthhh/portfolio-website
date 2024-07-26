@@ -28,7 +28,7 @@ const ExperienceSection = () => {
             </p>
             <Link
               href={""}
-              className="know-more font-primary sm:text-xs text-sm underline underline-offset-2"
+              className="know-more flex font-primary sm:text-xs text-sm underline underline-offset-2"
             >
               <span>Know more</span>
               <svg

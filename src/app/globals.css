@@ -17,6 +17,7 @@
   --color-primary-text: rgb(53, 53, 53);
 }
 
+*,
 html {
   scroll-behavior: smooth;
 }
@@ -111,7 +112,6 @@ html {
 .know-more {
   cursor: pointer;
   transition: all 0.2s;
-  display: flex;
   align-items: center;
 }
 
