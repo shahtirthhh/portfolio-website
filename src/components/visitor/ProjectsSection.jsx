@@ -1,5 +1,4 @@
 import projects from "@/data/projects";
-import Image from "next/image";
 import Link from "next/link";
 
 const ProjectsSection = () => {
@@ -13,7 +12,10 @@ const ProjectsSection = () => {
       </div>
       {projects.map((project) => (
         // Single entry
-        <div className="flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6">
+        <div
+          key={project.id}
+          className="flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
+        >
           {/* Heading section */}
           <div className="flex flex-col justify-between h-fit items-start gap-1">
             <h1 className="btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
@@ -23,7 +25,7 @@ const ProjectsSection = () => {
               {project.core}
             </p>
             <Link
-              href={""}
+              href={"/projects/" + project.id}
               className="know-more sm:flex hidden font-primary sm:text-xs text-sm underline underline-offset-2"
             >
               <span>Know more</span>
@@ -50,7 +52,7 @@ const ProjectsSection = () => {
             ></video>
 
             <Link
-              href={""}
+              href={"/projects/" + project.id}
               className="know-more sm:hidden flex font-primary sm:text-xs text-sm underline underline-offset-2"
             >
               <span>Know more</span>

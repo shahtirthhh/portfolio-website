@@ -23,35 +23,35 @@ const Navigation = () => {
             icon="🏠"
             label="Home"
             isHovered={isHovered}
-            to="#hero"
+            to="/#hero"
           />
           <NavItem
             setHovered={setIsHovered}
             icon="💼"
             label="Experience"
             isHovered={isHovered}
-            to="#experience"
+            to="/#experience"
           />
           <NavItem
             setHovered={setIsHovered}
             icon="💻"
             label="Projects"
             isHovered={isHovered}
-            to="#projects"
+            to="/#projects"
           />
           <NavItem
             setHovered={setIsHovered}
-            icon="📄"
-            label="Research Papers"
+            icon="✒"
+            label="Publications"
             isHovered={isHovered}
-            to="#papers"
+            to="/#publications"
           />
           <NavItem
             setHovered={setIsHovered}
             icon="🎓"
             label="Certificates"
             isHovered={isHovered}
-            to="#certificates"
+            to="/#certificates"
           />
         </div>
         <div className="flex flex-col items-center gap-4">

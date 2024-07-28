@@ -12,7 +12,7 @@ const ExperienceSection = () => {
       </div>
       {experiences.map((experience) => (
         // Single entry
-        <div className="flex flex-col sm:p-6 p-3 gap-6">
+        <div key={experience.id} className="flex flex-col sm:p-6 p-3 gap-6">
           {/* Heading section */}
           <div className="flex flex-col justify-between  items-start gap-1">
             <h1 className="btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
@@ -27,7 +27,7 @@ const ExperienceSection = () => {
               {experience.core}
             </p>
             <Link
-              href={""}
+              href={`/experience/${experience.id}`}
               className="know-more flex font-primary sm:text-xs text-sm underline underline-offset-2"
             >
               <span>Know more</span>

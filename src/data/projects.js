@@ -1,5 +1,6 @@
 const projects = [
   {
+    id: "restaurant-system",
     title: "Restaurant system",
     core: "An kickstart to my developing skills",
     tasks: [
@@ -17,10 +18,20 @@ const projects = [
       "/media/projects/restaurant-system/5.png",
       "/media/projects/restaurant-system/6.png",
     ],
-    live: {},
-    github: {},
+    live: {
+      customer: "https://restaurant-system-customer-module.netlify.app/",
+      manager: "https://restaurant-system-manager-module.netlify.app/",
+      chef: "https://restaurant-system-chef-module.netlify.app/",
+    },
+    github: {
+      customer: "https://github.com/shahtirthhh/restaurant-system-customer",
+      manager: "https://github.com/shahtirthhh/restaurant-system-manager",
+      chef: "https://github.com/shahtirthhh/restaurant-system-chef",
+      api: "https://github.com/shahtirthhh/restaurant-system-backend",
+    },
   },
   {
+    id: "hackathon-2022",
     title: "Hackathon 2022",
     core: "A feature rich solution of real world problem",
     tasks: [
@@ -38,10 +49,18 @@ const projects = [
       "/media/projects/hackathon-2022/4.png",
       "/media/projects/hackathon-2022/5.png",
     ],
-    live: {},
-    github: {},
+    live: {
+      citizen: "https://hackathon-2022-citizen.netlify.app/",
+      government: "https://hackathon-2022-government.netlify.app/",
+    },
+    github: {
+      citizen: "https://github.com/shahtirthhh/hackathon-2022-citizen-module",
+      government: "https://github.com/shahtirthhh/hackathon-2022-govt-module",
+      api: "https://github.com/shahtirthhh/hackathon-2022-server",
+    },
   },
   {
+    id: "hackathon-2023",
     title: "Hackathon 2023",
     core: "Simple yet useful solution for the people",
     tasks: [
@@ -59,10 +78,19 @@ const projects = [
       "/media/projects/hackathon-2023/4.png",
       "/media/projects/hackathon-2023/5.png",
     ],
-    live: {},
-    github: {},
+    live: {
+      citizen: "https://tirth-shah-reso-portal-project.firebaseapp.com/",
+      collector: "https://tirth-reso-collector-portal.firebaseapp.com/",
+    },
+    github: {
+      citizen: "https://github.com/shahtirthhh/8th-sem-project-citizen-web-app",
+      collector:
+        "https://github.com/shahtirthhh/8th-sem-project-collector-web-app",
+      api: "https://github.com/shahtirthhh/8th-sem-project-server-",
+    },
   },
   {
+    id: "online-book-store",
     title: "Online book-store",
     core: "Project built during internship at Tatvasoft",
     tasks: [
@@ -78,8 +106,12 @@ const projects = [
       "/media/projects/online-bookstore/2.png",
       "/media/projects/online-bookstore/3.png",
     ],
-    live: {},
-    github: {},
+    live: {
+      application: "https://shah-tirth-tatvasoft-bookstore.netlify.app/",
+    },
+    github: {
+      bookstore: "https://github.com/shahtirthhh/Tatvasoft",
+    },
   },
 ];
 export default projects;

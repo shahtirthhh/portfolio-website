@@ -82,31 +82,31 @@ const HeroSection = () => {
       </div>
       <div className="infinite_slideshow mt-10">
         <div className=" infinite_slideshow_item slideshow_item1">
-          <Image src={react} fill />
+          <Image src={react} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item2">
-          <Image src={nodejs} fill />
+          <Image src={nodejs} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item3">
-          <Image src={nextjs} fill />
+          <Image src={nextjs} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item4">
-          <Image src={sql} fill />
+          <Image src={sql} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item5">
-          <Image src={typescript} fill />
+          <Image src={typescript} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item6">
-          <Image src={mongodb} fill />
+          <Image src={mongodb} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item7 ">
-          <Image src={reactNative} fill />
+          <Image src={reactNative} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item8">
-          <Image src={graphql} fill />
+          <Image src={graphql} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item9">
-          <Image src={tailwindcss} fill />
+          <Image src={tailwindcss} fill priority />
         </div>
       </div>
     </div>
