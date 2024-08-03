@@ -1,4 +1,5 @@
 import publications from "@/data/publications";
+import { notFound } from "next/navigation";
 
 const PublicationDetails = ({ params }) => {
   const publication = publications.find(

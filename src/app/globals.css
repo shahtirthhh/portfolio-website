@@ -25,6 +25,9 @@ html {
 .link-border {
   @apply border-transparent border-white relative before:content-[''] before:absolute before:w-0 before:h-[2px] before:bottom-0 before:left-0  before:transition-all before:duration-300 hover:before:w-full;
 }
+.input {
+  @apply rounded-md bg-secondary transition-all hover:shadow-sm font-medium py-1 px-2 font-primary  text-primaryText;
+}
 
 @keyframes onLoad {
   from {

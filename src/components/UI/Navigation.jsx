@@ -60,14 +60,14 @@ const Navigation = () => {
             icon="📋"
             label="Resume"
             isHovered={isHovered}
-            to="resume"
+            to="/resume"
           />
           <NavItem
             setHovered={setIsHovered}
             icon="💬 "
             label="Contact"
             isHovered={isHovered}
-            to="contact"
+            to="/contact"
           />
           <ThemeSwitch />
         </div>

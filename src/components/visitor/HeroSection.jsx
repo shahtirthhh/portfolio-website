@@ -69,7 +69,7 @@ const HeroSection = () => {
           target="_blank"
           title="X profile"
           className="hover:scale-[1.04] transition-all"
-          href="https://leetcode.com/u/shahtirthhh/"
+          href="https://x.com/shahtirthhh"
         >
           <Image src={x} className="w-10 sm:w-12 sm:h-12 h-10" priority />
         </a>
@@ -82,31 +82,31 @@ const HeroSection = () => {
       </div>
       <div className="infinite_slideshow mt-10">
         <div className=" infinite_slideshow_item slideshow_item1">
-          <Image src={react} fill priority />
+          <Image title="ReactJS" src={react} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item2">
-          <Image src={nodejs} fill priority />
+          <Image title="NodeJS" src={nodejs} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item3">
-          <Image src={nextjs} fill priority />
+          <Image title="NextJS" src={nextjs} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item4">
-          <Image src={sql} fill priority />
+          <Image title="SQL" src={sql} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item5">
-          <Image src={typescript} fill priority />
+          <Image title="Typescript" src={typescript} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item6">
-          <Image src={mongodb} fill priority />
+          <Image title="MongoDB" src={mongodb} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item7 ">
-          <Image src={reactNative} fill priority />
+          <Image title="React Native" src={reactNative} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item8">
-          <Image src={graphql} fill priority />
+          <Image title="GraphQL" src={graphql} fill priority />
         </div>
         <div className=" infinite_slideshow_item slideshow_item9">
-          <Image src={tailwindcss} fill priority />
+          <Image title="TailwindCSS" src={tailwindcss} fill priority />
         </div>
       </div>
     </div>

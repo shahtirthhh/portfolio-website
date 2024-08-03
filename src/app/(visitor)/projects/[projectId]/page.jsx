@@ -1,7 +1,6 @@
 import projects from "@/data/projects";
 import ImageSlider from "@/components/UI/ImageSlider";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
 import github from "../../../../../public/assets/github.png";
 const ProjectDetails = ({ params }) => {

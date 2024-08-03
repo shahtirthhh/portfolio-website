@@ -1,16 +1,13 @@
-import React from "react";
-
-const page = () => {
+const ResumePage = () => {
   return (
     <div className="w-full h-full">
       <iframe
         src="/media/tirth-shah-gandhinagar.pdf"
         type="application/pdf"
-        width="100%"
-        height="700px"
+        className="w-full h-screen"
       ></iframe>
     </div>
   );
 };
 
-export default page;
+export default ResumePage;
