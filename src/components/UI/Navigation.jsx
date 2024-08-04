@@ -64,10 +64,17 @@ const Navigation = () => {
           />
           <NavItem
             setHovered={setIsHovered}
-            icon="💬 "
+            icon="💬"
             label="Contact"
             isHovered={isHovered}
             to="/contact"
+          />
+          <NavItem
+            setHovered={setIsHovered}
+            icon="👤"
+            label="Admin"
+            isHovered={isHovered}
+            to="/admin"
           />
           <ThemeSwitch />
         </div>
@@ -78,7 +85,13 @@ const Navigation = () => {
 
 const NavItem = ({ icon, label, isHovered, to, setHovered }) => (
   <div className={"flex items-center w-full gap-2"}>
-    <div className="sm:text-2xl text-lg">{icon}</div>
+    <Link
+      onClick={() => setHovered(false)}
+      href={to}
+      className="sm:text-2xl text-lg"
+    >
+      {icon}
+    </Link>
     {isHovered && (
       <Link
         onClick={() => setHovered(false)}

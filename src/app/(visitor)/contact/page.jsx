@@ -17,7 +17,7 @@ const Contact = () => {
     }
   }, [formState]);
   return (
-    <div className="flex flex-col items-center p-4 gap-6 w-full mt-5">
+    <div className="flex flex-col items-center p-4 gap-6 w-full overflow-y-auto custom_scroll">
       <h1 className="text-primaryText w-full text-center font-SFPro md:text-3xl mt-10 lg:text-5xl text-2xl">
         Let's connect
       </h1>
