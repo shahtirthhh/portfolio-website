@@ -9,14 +9,14 @@ const Navigation = () => {
 
   return (
     <div
-      className={` h-full bg-secondary text-primaryText transition-width duration-300 ${
+      className={`sticky top-0 z-10 h-[calc(100dvh)] bg-secondary text-primaryText transition-width duration-300 ${
         isHovered ? "w-44" : "sm:w-16 w-12"
       }`}
       id="vertical-nav"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <nav className="sticky top-7 flex flex-col py-7 items-center px-3 justify-between h-full">
+      <nav className=" flex flex-col py-7 items-center px-3 justify-between h-full">
         <div className="flex flex-col items-center  gap-4 w-full">
           <NavItem
             setHovered={setIsHovered}

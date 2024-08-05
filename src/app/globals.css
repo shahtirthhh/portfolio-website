@@ -29,7 +29,29 @@ html {
   @apply rounded-md bg-secondary transition-all hover:shadow-sm font-medium py-1 px-2 font-primary  text-primaryText;
 }
 
-@keyframes onLoad {
+.onLoad {
+  animation: onScroll linear 0.3s forwards;
+  opacity: 0;
+}
+
+.custom_scroll {
+  @apply scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400;
+}
+.on-scroll-normal {
+  /* opacity: 0;
+  scale: 0.8;
+  transition: all 0.5s; */
+  opacity: 0;
+  transform: translateY(50px) scale(0.85);
+  transition: all 0.5s ease-out;
+}
+.show {
+  /* opacity: 1;
+  scale: 1; */
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@keyframes onScroll {
   from {
     opacity: 0;
     scale: 0.95;
@@ -39,25 +61,12 @@ html {
     scale: 1;
   }
 }
-.onLoad {
-  animation: onLoad linear 0.3s forwards;
-  opacity: 0;
-}
-
-.custom_scroll {
-  @apply scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400;
-}
-/* * {
-  animation: onLoad linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 5%;
-} */
-
 @keyframes scrollLeft {
   to {
     left: -200px;
   }
 }
+
 .infinite_slideshow {
   position: relative;
   width: 90%;

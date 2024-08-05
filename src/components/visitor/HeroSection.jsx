@@ -23,11 +23,11 @@ const HeroSection = () => {
       id="hero"
     >
       <div className="flex sm:flex-row flex-col  justify-center items-center sm:gap-20 gap-8">
-        <div className="relative sm:w-56 sm:h-56 w-44 h-44 shadow-lg rounded-full">
+        <div className="on-scroll-normal relative sm:w-56 sm:h-56 w-44 h-44 shadow-lg rounded-full">
           <Image src={profile} priority fill className="rounded-full" />
         </div>
         <div className="flex flex-col">
-          <p className="md:text-3xl lg:text-5xl text-2xl sm:text-left text-center whitespace-pre-line text-primaryText  font-SFPro">
+          <p className="on-scroll-normal md:text-3xl lg:text-5xl text-2xl sm:text-left text-center whitespace-pre-line text-primaryText  font-SFPro">
             {"⚡ Full stack developer, \npart time data engineer"}
           </p>
         </div>
@@ -36,7 +36,7 @@ const HeroSection = () => {
         <a
           target="_blank"
           title="LinkedIn profile"
-          className="hover:scale-[1.04] transition-all"
+          className="on-scroll-normal hover:scale-[1.04] transition-all"
           href="https://www.linkedin.com/in/shahtirthh/"
         >
           <Image
@@ -48,7 +48,7 @@ const HeroSection = () => {
         <a
           target="_blank"
           title="Github profile"
-          className="hover:scale-[1.04] transition-all"
+          className="on-scroll-normal hover:scale-[1.04] transition-all"
           href="https://github.com/shahtirthhh"
         >
           <Image src={github} priority className="w-10 sm:w-12 sm:h-12 h-10" />
@@ -56,7 +56,7 @@ const HeroSection = () => {
         <a
           target="_blank"
           title="Leetcode profile"
-          className="hover:scale-[1.04] transition-all"
+          className="on-scroll-normal hover:scale-[1.04] transition-all"
           href="https://leetcode.com/u/shahtirthhh/"
         >
           <Image
@@ -68,14 +68,14 @@ const HeroSection = () => {
         <a
           target="_blank"
           title="X profile"
-          className="hover:scale-[1.04] transition-all"
+          className="on-scroll-normal hover:scale-[1.04] transition-all"
           href="https://x.com/shahtirthhh"
         >
           <Image src={x} className="w-10 sm:w-12 sm:h-12 h-10" priority />
         </a>
       </div>
       <div>
-        <p className="font-primary italic font-normal sm:text-lg text-xs text-center">
+        <p className="on-scroll-normal font-primary italic font-normal sm:text-lg text-xs text-center">
           " A computer engineering graduate with passion towards building
           intutive solutions and embarking his journey of Data engineer "
         </p>

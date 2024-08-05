@@ -6,7 +6,7 @@ import PublicationsSection from "@/components/visitor/PublicationsSection";
 
 const MainPage = () => {
   return (
-    <div className="flex flex-col gap-16 w-full overflow-y-auto overflow-x-hidden custom_scroll">
+    <div className="flex flex-col gap-16 w-full custom_scroll">
       <HeroSection />
       <ExperienceSection />
       <ProjectsSection />

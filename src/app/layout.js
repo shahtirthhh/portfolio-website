@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-primary transition-colors overflow-x-hidden h-[calc(100dvh)] overflow-hidden">
+      <body className="bg-primary transition-colors custom_scroll overflow-x-hidden">
         <Providers>{children}</Providers>
       </body>
     </html>

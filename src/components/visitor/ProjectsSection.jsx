@@ -4,7 +4,7 @@ import Link from "next/link";
 const ProjectsSection = () => {
   return (
     <div id="projects" className="p-4 flex flex-col gap-10">
-      <div className="flex flex-row items-center gap-5">
+      <div className="on-scroll-normal flex flex-row items-center gap-5">
         <p className="w-full h-[0.5px] bg-slate-200"></p>
         <h1 className="font-primary whitespace-nowrap italic font-normal lg:text-lg md:text-base text-sm  text-primaryText">
           💻 Projects
@@ -17,7 +17,7 @@ const ProjectsSection = () => {
           className="flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
         >
           {/* Heading section */}
-          <div className="flex flex-col justify-between h-fit items-start gap-1">
+          <div className="on-scroll-normal flex flex-col justify-between h-fit items-start gap-1">
             <h1 className="btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
               {project.title}
             </h1>
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
               src={project.video}
               poster={project.images[0]}
               controls
-              className="rounded-md shadow-md sm:w-96 "
+              className="on-scroll-normal rounded-md shadow-md sm:w-96 "
             ></video>
 
             <Link

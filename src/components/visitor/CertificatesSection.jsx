@@ -4,7 +4,7 @@ import ImageFullScreen from "../UI/ImageFullScreen";
 const CertificatesSection = () => {
   return (
     <div id="certificates" className="p-4 flex flex-col gap-10">
-      <div className="flex flex-row items-center gap-5">
+      <div className="on-scroll-normal flex flex-row items-center gap-5">
         <p className="w-full h-[0.5px] bg-slate-200"></p>
         <h1 className="font-primary whitespace-nowrap italic font-normal lg:text-lg md:text-base text-sm  text-primaryText">
           🎓 Certificates
@@ -14,7 +14,7 @@ const CertificatesSection = () => {
         // Single entry
         <div
           key={certificate.title}
-          className="flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
+          className="on-scroll-normal flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
         >
           {/* Heading section */}
           <div className="flex flex-col justify-between h-fit items-start gap-1">

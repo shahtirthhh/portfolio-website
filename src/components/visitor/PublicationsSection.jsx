@@ -3,7 +3,7 @@ import Link from "next/link";
 const PublicationsSection = () => {
   return (
     <div id="publications" className="p-4 flex flex-col gap-10">
-      <div className="flex flex-row items-center gap-5">
+      <div className="on-scroll-normal flex flex-row items-center gap-5">
         <p className="w-full h-[0.5px] bg-slate-200"></p>
         <h1 className="font-primary whitespace-nowrap italic font-normal lg:text-lg md:text-base text-sm  text-primaryText">
           🖋 Publications
@@ -11,7 +11,10 @@ const PublicationsSection = () => {
       </div>
       {publications.map((publication) => (
         // Single entry
-        <div key={publication.id} className="flex flex-col sm:p-6 p-3 gap-6">
+        <div
+          key={publication.id}
+          className="on-scroll-normal flex flex-col sm:p-6 p-3 gap-6"
+        >
           {/* Heading section */}
           <div className="flex flex-col justify-between  items-start gap-1">
             <h1 className="btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">

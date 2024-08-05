@@ -4,31 +4,34 @@ import Link from "next/link";
 const ExperienceSection = () => {
   return (
     <div id="experience" className="p-4 flex flex-col gap-10">
-      <div className="flex flex-row items-center gap-5">
-        <p className="w-full h-[0.5px] bg-slate-200"></p>
+      <div className="on-scroll-normal flex flex-row items-center gap-5">
+        <p className=" w-full h-[0.5px] bg-slate-200"></p>
         <h1 className="font-primary whitespace-nowrap italic font-normal lg:text-lg md:text-base text-sm  text-primaryText">
           💼 Work Experience
         </h1>
       </div>
       {experiences.map((experience) => (
         // Single entry
-        <div key={experience.id} className="flex flex-col sm:p-6 p-3 gap-6">
+        <div
+          key={experience.id}
+          className="on-scroll-normal flex flex-col sm:p-6 p-3 gap-6"
+        >
           {/* Heading section */}
           <div className="flex flex-col justify-between  items-start gap-1">
-            <h1 className="btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
+            <h1 className="  btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
               {experience.title}
             </h1>
-            <p className="lg:text-base md:text-sm text-xs font-medium italic font-primary text-primaryText">
+            <p className=" lg:text-base md:text-sm text-xs font-medium italic font-primary text-primaryText">
               {experience.company}
             </p>
           </div>
           <div className="flex sm:flex-row flex-col  justify-between sm:items-center items-start gap-2  ">
-            <p className="lg:text-lg md:text-base text-sm font-light font-primary text-primaryText">
+            <p className=" lg:text-lg md:text-base text-sm font-light font-primary text-primaryText">
               {experience.core}
             </p>
             <Link
               href={`/experience/${experience.id}`}
-              className="know-more flex font-primary sm:text-xs text-sm underline underline-offset-2"
+              className="  know-more flex font-primary sm:text-xs text-sm underline underline-offset-2"
             >
               <span>Know more</span>
               <svg
