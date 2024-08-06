@@ -1,4 +1,5 @@
 const ResumePage = () => {
+  // return new Promise(() => setTimeout(() => {}, 5000));
   return (
     <div className="w-full h-full">
       <iframe

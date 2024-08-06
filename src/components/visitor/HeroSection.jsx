@@ -61,7 +61,7 @@ const HeroSection = () => {
         >
           <Image
             src={leetcode}
-            className="w-9  sm:w-12 sm:h-12 h-9 rounded-full"
+            className="w-9  sm:w-10 sm:h-10 h-9 rounded-full"
             priority
           />
         </a>

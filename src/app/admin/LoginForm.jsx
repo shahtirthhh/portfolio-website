@@ -4,7 +4,7 @@ import { login_handler as login } from "@/actions/admin/authentication";
 import Link from "next/link";
 import ThemeSwitch from "@/components/themes/ThemeSwitch";
 
-const LoginForm = async () => {
+const LoginForm = () => {
   const [formState, login_handler] = useFormState(login, {});
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10">
@@ -67,6 +67,7 @@ const LoginForm = async () => {
 
 const LoginButton = () => {
   const { pending } = useFormStatus();
+
   return (
     <button
       disabled={pending}

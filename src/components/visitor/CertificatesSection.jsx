@@ -14,10 +14,10 @@ const CertificatesSection = () => {
         // Single entry
         <div
           key={certificate.title}
-          className="on-scroll-normal flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
+          className="flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
         >
           {/* Heading section */}
-          <div className="flex flex-col justify-between h-fit items-start gap-1">
+          <div className="on-scroll-normal  flex flex-col justify-between h-fit items-start gap-1">
             <h1 className=" font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
               {certificate.title}
             </h1>
@@ -27,7 +27,7 @@ const CertificatesSection = () => {
           </div>
 
           <ImageFullScreen
-            divClass={"w-[17rem] h-[9rem]"}
+            divClass={"w-[17rem] h-[9rem] on-scroll-normal "}
             src={certificate.image}
           ></ImageFullScreen>
         </div>
