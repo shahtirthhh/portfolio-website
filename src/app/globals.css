@@ -29,38 +29,18 @@ html {
   @apply rounded-md bg-secondary transition-all hover:shadow-sm font-medium py-1 px-2 font-primary  text-primaryText;
 }
 
-.onLoad {
-  animation: onScroll linear 0.3s forwards;
-  opacity: 0;
-}
-
 .custom_scroll {
   @apply scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400;
 }
-.on-scroll-normal {
-  /* opacity: 0;
-  scale: 0.8;
-  transition: all 0.5s; */
-  opacity: 0;
-  transform: translateY(50px) scale(0.85);
-  transition: all 0.5s ease-out;
+/* .on-scroll-normal {
+  opacity: 1;
+  transform: translateY(50px) scale(0.97);
+  transition: all 0.5s ease-in-out;
 }
 .show {
-  /* opacity: 1;
-  scale: 1; */
   opacity: 1;
   transform: translateY(0) scale(1);
-}
-@keyframes onScroll {
-  from {
-    opacity: 0;
-    scale: 0.95;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-}
+} */
 @keyframes scrollLeft {
   to {
     left: -200px;

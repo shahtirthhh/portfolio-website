@@ -4,7 +4,7 @@ const experiences = [
     title: "React Developer Intern",
     company: "Tatvasoft, India",
     duration: "1 month in 2023",
-    core: "🚀 Engaged into frontend developent using ReactJS.",
+    core: "🚀 Engaged into frontend developemt using ReactJS.",
     tasks: [
       "Enacted new features for a online book store web application.",
       "Integrated the frontend with backend endpoints, and leveraged git for version control.",

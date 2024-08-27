@@ -18,11 +18,11 @@ const Contact = () => {
   }, [formState]);
   return (
     <div className="flex flex-col items-center p-4 gap-6 w-full overflow-y-auto custom_scroll">
-      <h1 className="text-primaryText w-full text-center font-SFPro md:text-3xl mt-10 lg:text-5xl text-2xl">
+      <h1 className="on-scroll-normal text-primaryText w-full text-center font-SFPro md:text-3xl mt-10 lg:text-5xl text-2xl">
         Let's connect
       </h1>
       {formState.success && (
-        <div className="flex justify-center items-center w-full md:w-1/3 mt-5 border-2 border-green-500 bg-green-100 shadow-md text-neutral-700 rounded-lg font-primary font-medium p-4 dark:bg-green-300 ">
+        <div className="on-scroll-normal flex justify-center items-center w-full md:w-1/3 mt-5 border-2 border-green-500 bg-green-100 shadow-md text-neutral-700 rounded-lg font-primary font-medium p-4 dark:bg-green-300 ">
           <p>Thanks for message, Will get back to you soon !</p>
         </div>
       )}
@@ -30,7 +30,7 @@ const Contact = () => {
         action={send_message}
         className="flex flex-col justify-center items-center w-full max-w-3xl gap-6 mt-5"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+        <div className="on-scroll-normal flex flex-col md:flex-row justify-between items-center gap-4 w-full">
           <div className="flex flex-col gap-1 w-full md:w-1/3">
             <input
               type="text"
@@ -72,7 +72,7 @@ const Contact = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-1 w-full">
+        <div className="on-scroll-normal flex flex-col gap-1 w-full">
           <textarea
             placeholder="Whassup ?"
             className="input w-full h-32 resize-none"
@@ -89,20 +89,25 @@ const Contact = () => {
           <button
             id="contact_reset"
             type="reset"
-            className="disabled:bg-slate-400 flex flex-row items-center justify-center gap-2 px-3 py-2 bg-red-400 hover:bg-red-700 text-sm text-neutral-800 rounded-xl w-full md:w-1/6 transition-colors duration-300 font-medium font-primary"
+            className="on-scroll-normal disabled:bg-slate-400 flex flex-row items-center justify-center gap-2 px-3 py-2 bg-red-400 hover:bg-red-700 text-sm text-neutral-800 rounded-xl w-full md:w-1/6 transition-colors duration-300 font-medium font-primary"
           >
             Reset
           </button>
         </div>
       </form>
-      <div className="flex flex-row justify-around md:justify-between w-full md:w-1/3 mt-10">
+      <div className="on-scroll-normal flex flex-row justify-around md:justify-between w-full md:w-1/3 mt-10">
         <a
           target="_blank"
           title="LinkedIn profile"
           className="hover:scale-[1.04] transition-all"
           href="https://www.linkedin.com/in/shahtirthh/"
         >
-          <Image src={linkedin} className="w-8 sm:w-10 sm:h-10 h-8" priority />
+          <Image
+            src={linkedin}
+            className="w-8 sm:w-10 sm:h-10 h-8"
+            priority
+            alt="connect"
+          />
         </a>
         <a
           target="_blank"
@@ -110,7 +115,12 @@ const Contact = () => {
           className="hover:scale-[1.04] transition-all"
           href="https://github.com/shahtirthhh"
         >
-          <Image src={github} priority className="w-8 sm:w-10 sm:h-10 h-8" />
+          <Image
+            src={github}
+            priority
+            className="w-8 sm:w-10 sm:h-10 h-8"
+            alt="connect"
+          />
         </a>
         <a
           title="shahtirth0212@gmail.com"
@@ -121,6 +131,7 @@ const Contact = () => {
             src={email}
             className="w-8  sm:w-10 sm:h-10 h-8 rounded-full"
             priority
+            alt="connect"
           />
         </a>
         <a
@@ -128,8 +139,14 @@ const Contact = () => {
           title="X profile"
           className="hover:scale-[1.04] transition-all"
           href="https://x.com/shahtirthhh"
+          alt="connect"
         >
-          <Image src={x} className="w-8 sm:w-10 sm:h-10 h-8" priority />
+          <Image
+            src={x}
+            className="w-8 sm:w-10 sm:h-10 h-8"
+            priority
+            alt="connect"
+          />
         </a>
       </div>
     </div>
@@ -142,7 +159,7 @@ const SubmitButton = () => {
     <button
       disabled={pending}
       type="submit"
-      className="disabled:bg-slate-400 flex flex-row items-center whitespace-nowrap justify-center gap-2 px-3 py-2 bg-green-400 hover:bg-green-700 text-sm text-neutral-800 rounded-xl w-full md:w-1/6 transition-colors duration-300 font-medium font-primary"
+      className="on-scroll-normal disabled:bg-slate-400 flex flex-row items-center whitespace-nowrap justify-center gap-2 px-3 py-2 bg-green-400 hover:bg-green-700 text-sm text-neutral-800 rounded-xl w-full md:w-1/6 transition-colors duration-300 font-medium font-primary"
     >
       {pending ? "Sending..." : "Send Message"}
     </button>

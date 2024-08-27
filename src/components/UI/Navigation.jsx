@@ -3,13 +3,21 @@
 import { useState } from "react";
 import ThemeSwitch from "../themes/ThemeSwitch";
 import Link from "next/link";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false);
-
+  useGSAP(() => {
+    gsap.to("#vertical-nav", {
+      x: 0,
+      delay: 0.5,
+      duration: 0.4,
+    });
+  }, []);
   return (
     <div
-      className={`sticky top-0 z-10 h-[calc(100dvh)] bg-secondary text-primaryText transition-width duration-300 ${
+      className={`-translate-x-16 sticky top-0 z-[29] h-[calc(100dvh)] bg-secondary text-primaryText transition-width duration-300 ${
         isHovered ? "w-44" : "sm:w-16 w-12"
       }`}
       id="vertical-nav"

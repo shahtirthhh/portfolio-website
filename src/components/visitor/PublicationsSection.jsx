@@ -1,36 +1,98 @@
+"use client";
 import publications from "@/data/publications";
 import Link from "next/link";
+import publication from "../../../public/assets/publication.gif";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { useEffect, useRef } from "react";
+
 const PublicationsSection = () => {
+  const publication_title = useRef([]);
+  const publication_subject = useRef([]);
+  const publication_core = useRef([]);
+  const publication_know_more = useRef([]);
+
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+    gsap.to("#publication_heading", {
+      scrollTrigger: {
+        trigger: "#publication_heading",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: true,
+      },
+      scale: 1.3,
+      ease: "power1.out",
+    });
+  });
+  const animateElements = (elements) => {
+    elements.forEach((element) => {
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: true,
+        },
+        duration: 1,
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        ease: "power1.out",
+      });
+    });
+  };
+  useEffect(() => {
+    animateElements(publication_title.current);
+    animateElements(publication_core.current);
+    animateElements(publication_subject.current);
+    animateElements(publication_know_more.current);
+  }, [publications]);
   return (
-    <div id="publications" className="p-4 flex flex-col gap-10">
-      <div className="on-scroll-normal flex flex-row items-center gap-5">
-        <p className="w-full h-[0.5px] bg-slate-200"></p>
-        <h1 className="font-primary whitespace-nowrap italic font-normal lg:text-lg md:text-base text-sm  text-primaryText">
-          🖋 Publications
-        </h1>
+    <div id="publications" className="p-4 flex flex-col gap-32">
+      <div
+        id="publication_heading"
+        className="bg-primary pt-4 sticky z-[28] top-0 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
+      >
+        <Image src={publication} className="w-8 h-8 " alt="ex" />
+        <p className="font-primary text-center  italic font-medium  lg:text-xl md:text-base text-sm  text-primaryText">
+          Publications
+        </p>
       </div>
-      {publications.map((publication) => (
+      {publications.map((publication, index) => (
         // Single entry
         <div
           key={publication.id}
-          className="on-scroll-normal flex flex-col sm:p-6 p-3 gap-6"
+          className="on-scroll-normal z-[27] flex flex-col sm:p-6 p-3 gap-6"
         >
           {/* Heading section */}
           <div className="flex flex-col justify-between  items-start gap-1">
-            <h1 className="btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText">
+            <h1
+              ref={(el) => (publication_title.current[index] = el)}
+              className="translate-x-40 scale-[0.9] opacity-0 btn-shine font-SFPro lg:text-4xl md:text-3xl text-2xl sm:text-left text-primaryText"
+            >
               {publication.title}
             </h1>
-            <p className="lg:text-base md:text-sm text-xs font-medium italic font-primary text-primaryText">
+            <p
+              ref={(el) => (publication_subject.current[index] = el)}
+              className="translate-x-40 scale-[0.9] opacity-0 lg:text-base md:text-sm text-xs font-medium italic font-primary text-primaryText"
+            >
               {publication.subject}
             </p>
           </div>
           <div className="flex sm:flex-row flex-col  justify-between sm:items-center items-start gap-2  ">
-            <p className="lg:text-lg md:text-base text-sm font-light font-primary text-primaryText">
+            <p
+              ref={(el) => (publication_core.current[index] = el)}
+              className="translate-x-40 scale-[0.9] opacity-0 lg:text-lg md:text-base text-sm font-light font-primary text-primaryText"
+            >
               {publication.core}
             </p>
             <Link
+              ref={(el) => (publication_know_more.current[index] = el)}
               href={"/publications/" + publication.id}
-              className="know-more flex font-primary sm:text-xs text-sm underline underline-offset-2"
+              className="translate-x-40 scale-[0.9] opacity-0 know-more flex font-primary sm:text-xs text-sm underline underline-offset-2"
             >
               <span>Know more</span>
               <svg
