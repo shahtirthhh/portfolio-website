@@ -26,6 +26,15 @@ const ExperienceSection = () => {
       scale: 1.3,
       ease: "power1.out",
     });
+    gsap.to("#experience_heading_inner", {
+      scrollTrigger: {
+        trigger: "#experience_heading_inner",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: true,
+      },
+      opacity: 0.4,
+    });
   });
 
   const animateElements = (elements) => {
@@ -54,17 +63,17 @@ const ExperienceSection = () => {
   }, [experiences]);
 
   return (
-    <div id="experience" className="p-4 flex flex-col gap-32">
+    <div id="experience" className="p-4 flex flex-col items-center gap-32">
       <div
         id="experience_heading"
-        className="bg-primary pt-4 sticky top-0 z-[28] w-full flex flex-row justify-center items-center  scale-[2] gap-6"
+        className="bg-primary pt-4 sticky md:top-16 top-0 z-[28] md:w-[50vw] py-2 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
       >
-        <Image src={experience} className="w-8 h-8" alt="ex" />
+        <Image src={experience} className="w-6 h-6" alt="ex" />
         <p
-          // id="experience_heading"
-          className="font-primary text-center  italic font-medium  lg:text-xl md:text-base text-sm  text-primaryText"
+          id="experience_heading_inner"
+          className="font-sans text-center  italic font-medium  lg:text-base md:text-sm text-xs  text-primaryText"
         >
-          Work Experience
+          Industry Experience
         </p>
       </div>
       <div
@@ -86,10 +95,10 @@ const ExperienceSection = () => {
                 ref={(el) => (experience_company.current[index] = el)}
                 className=" translate-x-40 scale-[0.9] opacity-0  lg:text-base md:text-sm text-xs font-medium italic font-primary text-primaryText"
               >
-                {experience.company}
+                {experience.duration}
               </p>
             </div>
-            <div className="flex sm:flex-row flex-col  justify-between sm:items-center items-start gap-2  ">
+            <div className="flex flex-col  justify-center items-start gap-2  ">
               <p
                 ref={(el) => (experience_core.current[index] = el)}
                 className="translate-x-40 scale-[0.9] opacity-0  lg:text-lg md:text-base text-sm font-light font-primary text-primaryText"
@@ -99,7 +108,7 @@ const ExperienceSection = () => {
               <Link
                 ref={(el) => (experience_know_more.current[index] = el)}
                 href={`/experience/${experience.id}`}
-                className="know-more opacity-0 scale-[0.9] flex font-primary sm:text-xs text-sm underline underline-offset-2"
+                className="know-more translate-x-40 scale-[0.9] opacity-0  flex font-primary sm:text-xs text-sm underline underline-offset-2"
               >
                 <span>Know more</span>
                 <svg

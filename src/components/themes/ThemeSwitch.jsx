@@ -27,27 +27,29 @@ export default function ThemeSwitch() {
 
   if (mounted) {
     return (
-      <div className="w-fit hover:cursor-pointer hover:opacity-75 transition-all duration-300 ">
+      <div className="min-w-7 hover:cursor-pointer hover:opacity-75 transition-all duration-300 ">
         {resolvedTheme === "dark" ? (
           <Image
+            className="w-7 h-7"
             onClick={() => setTheme("light")}
             src={sun_image}
-            width={25}
-            height={25}
-            sizes="25x25"
+            // width={25}
+            // height={25}
+            // sizes="25x25"
             alt="Loading Light/Dark Toggle"
-            priority={false}
-            title="Switch to dark mode"
+            priority={true}
+            title="Switch to light mode"
           />
         ) : (
           <Image
+            className="w-7 h-7"
             onClick={() => setTheme("dark")}
             src={moon_image}
-            width={25}
-            height={25}
-            sizes="25x25"
+            // width={25}
+            // height={25}
+            // sizes="25x25"
             alt="Loading Light/Dark Toggle"
-            priority={false}
+            priority={true}
             title="Switch to dark mode"
           />
         )}

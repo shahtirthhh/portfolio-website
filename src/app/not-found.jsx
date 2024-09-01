@@ -10,7 +10,7 @@ const NotFound = () => {
   // );
   return (
     // <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
-    <div className="text-center p-8 w-full h-full flex justify-center items-center flex-col gap-5 ">
+    <div className="text-center p-8 w-screen h-[calc(100dvh)] flex justify-center items-center flex-col gap-5 ">
       <p className="text-xl mt-4 font-primary">
         Uhh ohh, the page you are looking for does not exist.
       </p>

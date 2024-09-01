@@ -15,8 +15,8 @@ const ImageFullScreen = ({ src, divClass, imageClass }) => {
     gsap.to(imageContainer.current, {
       scrollTrigger: {
         trigger: imageContainer.current,
-        start: "top 80%",
-        end: "top 10%",
+        start: "top 90%",
+        end: "top 80%",
         scrub: true,
       },
       scale: 1,
@@ -34,7 +34,7 @@ const ImageFullScreen = ({ src, divClass, imageClass }) => {
         scale: 2,
 
         zIndex: 9999,
-        duration: 1.5,
+        duration: 0.5,
         ease: "power4.out",
       });
     } else {
@@ -43,7 +43,7 @@ const ImageFullScreen = ({ src, divClass, imageClass }) => {
         x: 0,
         y: 0,
         zIndex: 10,
-        duration: 1.5,
+        duration: 0.5,
         ease: "power4.out",
       });
     }

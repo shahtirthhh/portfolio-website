@@ -27,6 +27,15 @@ const ProjectsSection = () => {
       scale: 1.3,
       ease: "power1.out",
     });
+    gsap.to("#projects_heading_inner", {
+      scrollTrigger: {
+        trigger: "#projects_heading_inner",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: true,
+      },
+      opacity: 0.4,
+    });
   });
 
   const animateElements = (elements) => {
@@ -53,13 +62,16 @@ const ProjectsSection = () => {
     animateElements(project_know_more2.current);
   }, [projects]);
   return (
-    <div id="projects" className="p-4 flex flex-col gap-32">
+    <div id="projects" className="p-4 flex flex-col items-center gap-32">
       <div
         id="projects_heading"
-        className="bg-primary pt-4 sticky top-0 z-[28] w-full flex flex-row justify-center items-center  scale-[2] gap-3"
+        className="bg-primary pt-4 sticky md:top-16 top-0 z-[28] md:w-[50vw] py-2 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
       >
-        <Image src={project} className="w-8 h-8 " alt="ex" />
-        <p className="font-primary text-center  italic font-medium  lg:text-xl md:text-base text-sm  text-primaryText">
+        <Image src={project} className="w-6 h-6 " alt="ex" />
+        <p
+          id="projects_heading_inner"
+          className="font-sans text-center  italic font-medium  lg:text-base md:text-sm text-xs  text-primaryText"
+        >
           Projects
         </p>
       </div>
@@ -67,7 +79,7 @@ const ProjectsSection = () => {
         // Single entry
         <div
           key={project.id}
-          className="flex sm:flex-row relative z-[27] flex-col justify-between sm:p-6 p-3 gap-6"
+          className="flex relative z-[27] flex-col justify-between sm:p-6 p-3 gap-6"
         >
           {/* Heading section */}
           <div className="on-scroll-normal flex flex-col justify-between h-fit items-start gap-1">
@@ -104,12 +116,6 @@ const ProjectsSection = () => {
             </Link>
           </div>
           <div className="flex sm:flex-row flex-col  justify-between sm:items-center items-start gap-2  ">
-            {/* <video
-              src={project.video}
-              poster={project.images[0]}
-              controls
-              className="on-scroll-normal rounded-md shadow-md sm:w-[32rem] "
-            ></video> */}
             <VideoPlayer
               posterSrc={project.images[0]}
               videoSrc={project.video}

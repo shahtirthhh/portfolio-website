@@ -6,7 +6,7 @@ import React, { useRef, useState } from "react";
 // SVG Icons
 const PlayIcon = () => (
   <svg
-    class="w-6 h-6 text-gray-800 dark:text-white"
+    className="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -15,7 +15,7 @@ const PlayIcon = () => (
     viewBox="0 0 24 24"
   >
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
       clip-rule="evenodd"
     />
@@ -95,7 +95,7 @@ const CustomVideoPlayer = ({ videoSrc, posterSrc }) => {
   return (
     <div
       ref={video_container}
-      className="opacity-0 scale-[0.9] relative inline-block"
+      className="translate-x-40 scale-[0.9] opacity-0 relative inline-block"
     >
       <video
         ref={videoRef}

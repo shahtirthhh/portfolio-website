@@ -8,7 +8,8 @@
 
 .dark {
   --color-primary: rgb(27, 27, 27);
-  --color-secondary: #1f2937;
+  /* --color-secondary: #1f2937; */
+  --color-secondary: rgb(34, 34, 34);
   --color-primary-text: rgb(226, 226, 226);
 }
 .light {
@@ -64,8 +65,8 @@ html {
 }
 .infinite_slideshow_item {
   display: flex;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
   left: max(calc(5rem * 9), 100%);
   animation-name: scrollLeft;

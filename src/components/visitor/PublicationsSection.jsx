@@ -26,6 +26,15 @@ const PublicationsSection = () => {
       scale: 1.3,
       ease: "power1.out",
     });
+    gsap.to("#publication_heading_inner", {
+      scrollTrigger: {
+        trigger: "#publication_heading_inner",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: true,
+      },
+      opacity: 0.4,
+    });
   });
   const animateElements = (elements) => {
     elements.forEach((element) => {
@@ -51,13 +60,16 @@ const PublicationsSection = () => {
     animateElements(publication_know_more.current);
   }, [publications]);
   return (
-    <div id="publications" className="p-4 flex flex-col gap-32">
+    <div id="publications" className="p-4 flex flex-col items-center gap-32">
       <div
         id="publication_heading"
-        className="bg-primary pt-4 sticky z-[28] top-0 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
+        className="bg-primary pt-4 sticky md:top-16 top-0 z-[28] md:w-[50vw] py-2 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
       >
-        <Image src={publication} className="w-8 h-8 " alt="ex" />
-        <p className="font-primary text-center  italic font-medium  lg:text-xl md:text-base text-sm  text-primaryText">
+        <Image src={publication} className="w-6 h-6" alt="ex" />
+        <p
+          id="publication_heading_inner"
+          className="font-sans text-center  italic font-medium  lg:text-base md:text-sm text-xs  text-primaryText"
+        >
           Publications
         </p>
       </div>
@@ -82,7 +94,7 @@ const PublicationsSection = () => {
               {publication.subject}
             </p>
           </div>
-          <div className="flex sm:flex-row flex-col  justify-between sm:items-center items-start gap-2  ">
+          <div className="flex flex-col  items-start gap-2  ">
             <p
               ref={(el) => (publication_core.current[index] = el)}
               className="translate-x-40 scale-[0.9] opacity-0 lg:text-lg md:text-base text-sm font-light font-primary text-primaryText"

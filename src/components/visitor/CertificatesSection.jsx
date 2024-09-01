@@ -14,15 +14,24 @@ const CertificatesSection = () => {
 
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-    gsap.to("#certificate_heading", {
+    gsap.to("#certificates_heading", {
       scrollTrigger: {
-        trigger: "#certificate_heading",
+        trigger: "#certificates_heading",
         start: "top 80%",
         end: "top 10%",
         scrub: true,
       },
       scale: 1.3,
       ease: "power1.out",
+    });
+    gsap.to("#certificates_heading_inner", {
+      scrollTrigger: {
+        trigger: "#certificates_heading_inner",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: true,
+      },
+      opacity: 0.4,
     });
   });
 
@@ -31,8 +40,8 @@ const CertificatesSection = () => {
       gsap.to(element, {
         scrollTrigger: {
           trigger: element,
-          start: "top 80%",
-          end: "top 60%",
+          start: "top 90%",
+          end: "top 80%",
           scrub: true,
         },
         duration: 1,
@@ -49,21 +58,24 @@ const CertificatesSection = () => {
     animateElements(certificate_core.current);
   }, [certificates]);
   return (
-    <div id="certificates" className="p-4 flex flex-col gap-32">
+    <div id="certificates" className="p-4 flex items-center flex-col gap-32">
       <div
-        id="certificate_heading"
-        className="bg-primary pt-4 sticky top-0 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
+        id="certificates_heading"
+        className="bg-primary pt-4 sticky md:top-16 top-0 z-[28] md:w-[50vw] py-2 w-full flex flex-row justify-center items-center  scale-[2] gap-6"
       >
-        <Image src={certificate} className="w-8 h-8 " alt="ex" />
-        <p className="font-primary text-center  italic font-medium  lg:text-xl md:text-base text-sm  text-primaryText">
-          Certificates
+        <Image src={certificate} className="w-6 h-6" alt="ex" />
+        <p
+          id="certificates_heading_inner"
+          className="font-sans text-center  italic font-medium  lg:text-base md:text-sm text-xs  text-primaryText"
+        >
+          Certifications
         </p>
       </div>
       {certificates.map((certificate, index) => (
         // Single entry
         <div
           key={certificate.title}
-          className="flex sm:flex-row flex-col justify-between sm:p-6 p-3 gap-6"
+          className="flex flex-col justify-between sm:p-6 p-3 gap-6"
         >
           {/* Heading section */}
           <div className="on-scroll-normal  flex flex-col justify-between h-fit items-start gap-1">

@@ -3,7 +3,7 @@ import ScrollProgess from "@/components/UI/ScrollProgess";
 
 export default function VisitorLayout({ children }) {
   return (
-    <main className="flex flex-row w-full h-full overflow-x-clip">
+    <main className="flex flex-col w-full h-full overflow-x-clip">
       <ScrollProgess />
       <Navigation />
       {children}

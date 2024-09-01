@@ -1,5 +1,19 @@
 const experiences = [
   {
+    id: "full-stack-developer",
+    title: "Full Stack Developer",
+    company: "Digipine Infotech, India",
+    duration: "Jan 2024 to current",
+    core: "🚀 Leveraging MERN stack for building scalable web applications.",
+    tasks: [
+      "Enacted new features for a online book store web application.",
+      "Integrated the frontend with backend endpoints, and leveraged git for version control.",
+      "Collaborated with groups for better productivity and learnings.",
+    ],
+    certtificate: "/media/experience/tatvasoft.png",
+    techstack: ["React", "Node", "MongoDB", "Redux", "Git/Github"],
+  },
+  {
     id: "react-developer-intern",
     title: "React Developer Intern",
     company: "Tatvasoft, India",
