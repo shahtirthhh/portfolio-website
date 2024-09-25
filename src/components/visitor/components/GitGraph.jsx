@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
 import { useTheme } from "next-themes";
 import { gsap } from "gsap";
@@ -11,18 +11,20 @@ const GitGraph = ({ contributions }) => {
   const theme = useTheme();
 
   gsap.registerPlugin(ScrollTrigger);
+
   useGSAP(() => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: "#gitChart", // Target the container
-          start: "top top", // Start when the top of the container is near the viewport (80%)
-          end: "bottom 40%", // End when the container leaves the viewport
-          scrub: true, // Smoothly transition opacity as you scroll
-          markers: false, // Enable markers for debugging
+          trigger: "#gitChart",
+          start: "top top",
+          end: "bottom 50%",
+          scrub: true,
+          markers: true,
         },
       })
-      .fromTo("#gitChart", { opacity: 1 }, { opacity: 0 });
+      .fromTo("#gitChart", { opacity: 1 }, { opacity: 0 })
+      .fromTo("#gitChart", { opacity: 0 }, { opacity: 1 });
   }, []);
 
   useEffect(() => {
@@ -31,49 +33,34 @@ const GitGraph = ({ contributions }) => {
       getChartOptions(contributions, theme.theme)
     );
     chart.render();
-    // Cleanup on unmount
     return () => {
       chart.destroy();
     };
   }, [contributions, theme.theme]);
 
   return (
-    <div id="gitChart" className="relative h-[100vh] w-full opacity-0 ">
-      <div className="sticky top-[calc(50dvh)] flex flex-col items-left justify-center">
-        {/* This content will remain fixed in the center of the viewport */}
-        <div className="text-primaryText font-SFPro mx-10">
-          <h3>
+    <div>
+      <div
+        id="gitChart"
+        className="border border-black relative h-[calc(100vh)] w-full"
+      >
+        <div className="sticky h-[calc(70dvh)] inset-0 flex flex-col items-left justify-center space-y-4 mx-10">
+          {/* Chart heading */}
+          <h3 className="text-primaryText font-SFPro">
             <span>Total 176 Github contributions</span>
           </h3>
+          <div ref={chartRef} className="w-full h-[250px]"></div>
         </div>
-        <div ref={chartRef} className="w-screen"></div>
       </div>
     </div>
   );
 };
+
 function getChartOptions(contributions, theme) {
-  let labelColor = "black";
-  let borderColor = "gray";
+  let labelColor = theme === "dark" ? "white" : "black";
+  let borderColor = theme === "dark" ? "gray" : "black";
   let baseColor = "#7239ea";
-  let lightColor = "#f8f5ff";
-
-  switch (theme) {
-    case "light":
-      labelColor = "black";
-      borderColor = "black";
-      baseColor = "#7239ea";
-      lightColor = "#f8f5ff";
-      break;
-    case "dark":
-      labelColor = "white";
-      borderColor = "gray";
-      baseColor = "#7239ea";
-      lightColor = "#1b1b1b";
-      break;
-
-    default:
-      break;
-  }
+  let lightColor = theme === "dark" ? "#1b1b1b" : "#f8f5ff";
 
   return {
     series: [
@@ -89,94 +76,48 @@ function getChartOptions(contributions, theme) {
       },
     ],
     chart: {
-      fontFamily: "inherit",
       type: "area",
-      height: window.innerWidth > 768 ? 250 : 200,
-      toolbar: {
-        show: false,
-      },
+      height: 250,
+      toolbar: { show: false },
     },
-    plotOptions: {},
-    legend: {
-      show: false,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    fill: {
-      type: "solid",
-      opacity: 1,
-    },
+    dataLabels: { enabled: false },
     stroke: {
       curve: "smooth",
-      show: true,
-      width: 2,
+      width: 3,
       colors: [baseColor],
     },
     xaxis: {
-      // categories: contributions.map((contribution) =>
-      //   new Date(contribution.date).toDateString()
-      // ),
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
+      categories: contributions.map((contribution) =>
+        new Date(contribution.date).toLocaleDateString()
+      ),
       labels: {
-        style: {
-          colors: labelColor,
-          fontSize: "0px",
-        },
+        style: { colors: labelColor, fontSize: "0px" },
       },
-      crosshairs: {
-        position: "front",
-        stroke: {
-          color: baseColor,
-          width: 1,
-          dashArray: 3,
-        },
-      },
-      tooltip: {
-        enabled: false,
-        offsetY: 10,
-        style: {
-          fontSize: "12px",
-        },
+      title: {
+        text: "Date",
+        style: { color: labelColor, fontSize: "14px" },
       },
     },
     yaxis: {
       labels: {
-        style: {
-          colors: labelColor,
-          fontSize: "12px",
-        },
+        style: { colors: labelColor, fontSize: "12px" },
+      },
+      title: {
+        text: "Contribution Count",
+        style: { color: labelColor, fontSize: "14px" },
       },
     },
+    fill: { opacity: 0.8 },
     tooltip: {
-      style: {
-        fontSize: "12px",
-      },
-      y: {
-        formatter: function (val) {
-          return val;
-        },
-      },
+      style: { fontSize: "12px" },
+      y: { formatter: (val) => val },
     },
-    colors: [lightColor],
     grid: {
       borderColor: borderColor,
       strokeDashArray: 4,
-      yaxis: {
-        lines: {
-          show: true,
-        },
-      },
     },
-    markers: {
-      strokeColors: baseColor,
-      strokeWidth: 3,
-    },
+    markers: { strokeColors: baseColor, strokeWidth: 3 },
+    colors: [lightColor],
   };
 }
 

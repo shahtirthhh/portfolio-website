@@ -9,7 +9,7 @@ const MainPage = () => {
   return (
     <div className="flex flex-col sm:gap-56 gap-32 w-full custom_scroll">
       <HeroSection />
-      <Github />
+      {/* <Github /> */}
       <ExperienceSection />
       <ProjectsSection />
       <PublicationsSection />

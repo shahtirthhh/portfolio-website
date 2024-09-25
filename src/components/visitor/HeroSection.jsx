@@ -80,7 +80,7 @@ const HeroSection = () => {
         scrollTrigger: {
           trigger: "#hero_scroll", // Target the hero container
           start: "top top", // Start fading when the hero section is at the top
-          end: "bottom 40%", // End fading when the hero section is completely out of view
+          end: "bottom 50%", // End fading when the hero section is completely out of view
           scrub: true, // Enables scrub (smooth) effect, syncs with scrolling
           markers: false, // Optional: Enable markers to debug positioning
         },
