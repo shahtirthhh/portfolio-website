@@ -39,8 +39,8 @@ const HeroSection = () => {
     gsap.to(".message_text1", {
       scrollTrigger: {
         trigger: ".message_text1",
-        start: window.innerWidth <= 768 ? "top 70%" : "top 80%",
-        end: window.innerWidth <= 768 ? "top 60%" : "top 70%",
+        start: window.innerWidth <= 768 ? "top 70%" : "top 70%",
+        end: window.innerWidth <= 768 ? "top 65%" : "top 65%",
         scrub: true,
       },
       opacity: 1,
@@ -48,141 +48,129 @@ const HeroSection = () => {
     gsap.to(".message_text2", {
       scrollTrigger: {
         trigger: ".message_text2",
-        start: window.innerWidth <= 768 ? "top 70%" : "top 80%",
-        end: window.innerWidth <= 768 ? "top 60%" : "top 70%",
+        start: window.innerWidth <= 768 ? "top 70%" : "top 70%",
+        end: window.innerWidth <= 768 ? "top 65%" : "top 65%",
         scrub: true,
       },
       opacity: 1,
     });
-    gsap.to("#hero_tech_row1", {
-      // xPercent: -100, // move it to the left
-      // left: "0%",
-      x: "100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#hero_tech_row1",
-        start: "top bottom", // when top of the element hits bottom of the viewport
-        end: "bottom top", // when bottom of the element hits top of the viewport
-        scrub: true,
-      },
-    });
-
-    gsap.to("#hero_tech_row2", {
-      // xPercent: 100, // move it to the right
-
+    gsap.from("#hero_tech_row1", {
       x: "-100%",
       ease: "none",
       scrollTrigger: {
-        trigger: "#hero_tech_row2",
-        start: "top bottom", // when top of the element hits bottom of the viewport
-        end: "bottom top", // when bottom of the element hits top of the viewport
+        trigger: "#hero_tech_row1",
+        start: "top bottom",
+        end: "bottom top",
         scrub: true,
       },
     });
-    // gsap.to("#hero_tech_row1", {
-    //   scrollTrigger: {
-    //     trigger: "#hero_tech_row1",
-    //     start: window.innerWidth <= 768 ? "top 80%" : "top 80%",
-    //     end: window.innerWidth <= 768 ? "top 10%" : "top 10%",
-    //     scrub: true,
-    //   },
-    //   x: window.innerWidth <= 768 ? "100%" : "100vw",
-    // });
-    // gsap.to("#hero_tech_row2", {
-    //   scrollTrigger: {
-    //     trigger: "#hero_tech_row2",
-    //     start: window.innerWidth <= 768 ? "top 80%" : "top 80%",
-    //     end: window.innerWidth <= 768 ? "top 10%" : "top 10%",
-    //     scrub: true,
-    //   },
-    //   x: window.innerWidth <= 768 ? "-100%" : "-100vw",
-    // });
+
+    gsap.from("#hero_tech_row2", {
+      x: "150%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#hero_tech_row2",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#hero_scroll", // Target the hero container
+          start: "top top", // Start fading when the hero section is at the top
+          end: "bottom 50%", // End fading when the hero section is completely out of view
+          scrub: true, // Enables scrub (smooth) effect, syncs with scrolling
+          markers: false, // Optional: Enable markers to debug positioning
+        },
+      })
+      .fromTo("#hero_scroll", { opacity: 1 }, { opacity: 0 });
   }, []);
   return (
-    <div
-      className="sm:mt-0 mt-12 flex flex-col justify-between gap-8 "
-      id="hero"
-    >
-      <div className="hero_animate  h-[calc(70dvh)] scale-[0.9] opacity-0 flex flex-col  justify-center items-center sm:gap-20 gap-20">
-        <div className="flex flex-col md:flex-row w-full items-center justify-center md:gap-10 gap-7">
-          <div
-            id="hero_main_image"
-            className="relative w-52 h-52 md:w-48 md:h-48 lg:w-56 lg:h-56 shadow-lg rounded-full"
-          >
-            <Image
-              src={profile}
-              priority
-              alt="profile"
-              fill
-              className="rounded-full"
-            />
+    <div className="sm:mt-0  flex flex-col justify-between gap-8 " id="hero">
+      <div id="hero_scroll" className="relative h-[calc(100dvh)] w-full ">
+        <div className="fixed inset-0 hero_animate  h-[calc(70dvh)] scale-[0.9] opacity-0 flex flex-col  justify-center items-center sm:gap-20 gap-20">
+          <div className="flex flex-col mt-36 md:flex-row w-full items-center justify-center md:gap-10 gap-7">
+            <div
+              id="hero_main_image"
+              className="relative w-52 h-52 md:w-48 md:h-48 lg:w-56 lg:h-56 shadow-lg rounded-full"
+            >
+              <Image
+                src={profile}
+                priority
+                alt="profile"
+                fill
+                className="rounded-full"
+              />
+            </div>
+            <div
+              id="hero_main_tagline"
+              className="flex flex-col items-center md:items-start"
+            >
+              <p className="lg:text-6xl md:text-4xl text-[2rem] text-primaryText font-SFPro whitespace-pre-line text-left md:text-left md:leading-tight">
+                {"⚡ Full stack developer, \npart time data engineer"}
+              </p>
+            </div>
           </div>
-          <div
-            id="hero_main_tagline"
-            className="flex flex-col items-center md:items-start"
-          >
-            <p className="lg:text-6xl md:text-4xl text-[2rem] text-primaryText font-SFPro whitespace-pre-line text-left md:text-left md:leading-tight">
-              {"⚡ Full stack developer, \npart time data engineer"}
-            </p>
-          </div>
-        </div>
 
-        <div
-          id="hero_links"
-          className=" flex flex-wrap justify-center gap-10 items-center"
-        >
-          <a
-            target="_blank"
-            title="LinkedIn profile"
-            className=" hover:scale-[1.04] transition-all"
-            href="https://www.linkedin.com/in/shahtirthh/"
+          <div
+            id="hero_links"
+            className=" flex flex-wrap justify-center gap-10 items-center"
           >
-            <Image
-              src={linkedin}
-              className="w-10 sm:w-12 sm:h-12 h-10"
-              priority
-              alt="linkedIn"
-            />
-          </a>
-          <a
-            target="_blank"
-            title="Github profile"
-            className=" hover:scale-[1.04] transition-all"
-            href="https://github.com/shahtirthhh"
-          >
-            <Image
-              src={github}
-              priority
-              className="w-10 sm:w-12 sm:h-12 h-10"
-              alt="github"
-            />
-          </a>
-          <a
-            target="_blank"
-            title="Leetcode profile"
-            className=" hover:scale-[1.04] transition-all"
-            href="https://leetcode.com/u/shahtirthhh/"
-          >
-            <Image
-              src={leetcode}
-              className="w-9  sm:w-10 sm:h-10 h-9 rounded-full"
-              priority
-              alt="leetcode"
-            />
-          </a>
-          <a
-            target="_blank"
-            title="X profile"
-            className=" hover:scale-[1.04] transition-all"
-            href="https://x.com/shahtirthhh"
-          >
-            <Image
-              src={x}
-              className="w-10 sm:w-12 sm:h-12 h-10"
-              priority
-              alt="X"
-            />
-          </a>
+            <a
+              target="_blank"
+              title="LinkedIn profile"
+              className=" hover:scale-[1.04] transition-all"
+              href="https://www.linkedin.com/in/shahtirthh/"
+            >
+              <Image
+                src={linkedin}
+                className="w-10 sm:w-12 sm:h-12 h-10"
+                priority
+                alt="linkedIn"
+              />
+            </a>
+            <a
+              target="_blank"
+              title="Github profile"
+              className=" hover:scale-[1.04] transition-all"
+              href="https://github.com/shahtirthhh"
+            >
+              <Image
+                src={github}
+                priority
+                className="w-10 sm:w-12 sm:h-12 h-10"
+                alt="github"
+              />
+            </a>
+            <a
+              target="_blank"
+              title="Leetcode profile"
+              className=" hover:scale-[1.04] transition-all"
+              href="https://leetcode.com/u/shahtirthhh/"
+            >
+              <Image
+                src={leetcode}
+                className="w-9  sm:w-10 sm:h-10 h-9 rounded-full"
+                priority
+                alt="leetcode"
+              />
+            </a>
+            <a
+              target="_blank"
+              title="X profile"
+              className=" hover:scale-[1.04] transition-all"
+              href="https://x.com/shahtirthhh"
+            >
+              <Image
+                src={x}
+                className="w-10 sm:w-12 sm:h-12 h-10"
+                priority
+                alt="X"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -207,7 +195,7 @@ const HeroSection = () => {
         <div className="flex flex-col gap-20 w-screen relative">
           <div
             id="hero_tech_row1"
-            className="flex flex-row w-fit gap-32 overflow-hidden absolute left-[0] translate-x-[-100%]"
+            className="flex flex-row w-fit gap-32 overflow-hidden "
           >
             <div className="relative w-16 h-16">
               <Image title="NodeJS" src={nodejs} fill priority alt="tech" />
@@ -230,7 +218,7 @@ const HeroSection = () => {
           </div>
           <div
             id="hero_tech_row2"
-            className="flex flex-row w-fit gap-32 overflow-hidden absolute right-[0] translate-x-[100%] top-52"
+            className="flex flex-row w-fit gap-32 overflow-hidden "
           >
             <div className="relative w-16 h-16">
               <Image
@@ -270,54 +258,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
-        {/* <div id="hero_tech" className=" infinite_slideshow mt-10">
-          <div className=" infinite_slideshow_item slideshow_item1">
-            <Image title="NodeJS" src={nodejs} fill priority alt="tech" />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item2">
-            <Image title="ReactJS" src={react} fill priority alt="tech" />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item3">
-            <Image title="SQL" src={sql} fill priority alt="tech" />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item4">
-            <Image title="MongoDB" src={mongodb} fill priority alt="tech" />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item5">
-            <Image
-              title="Typescript"
-              src={typescript}
-              fill
-              priority
-              alt="tech"
-            />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item6">
-            <Image title="GraphQL" src={graphql} fill priority alt="tech" />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item7">
-            <Image
-              title="TailwindCSS"
-              src={tailwindcss}
-              fill
-              priority
-              alt="tech"
-            />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item8">
-            <Image title="NextJS" src={nextjs} fill priority alt="tech" />
-          </div>
-          <div className=" infinite_slideshow_item slideshow_item9 ">
-            <Image
-              title="React Native"
-              src={reactNative}
-              fill
-              priority
-              alt="tech"
-            />
-          </div>
-        </div> */}
       </div>
     </div>
   );
